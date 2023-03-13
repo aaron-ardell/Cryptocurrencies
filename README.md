@@ -31,6 +31,7 @@ The data is not ideal, so it will need to be preprocessed to fit a machine learn
   - `pca = PCA(n_components=3)`
   - `crypto_pcs = pca.fit_transform(X)`  
   - `pcs_df = pd.DataFrame(data=crypto_pcs, columns=["PC 1", "PC 2", "PC 3"], index = dropped_crypto_df.index)`
+
 ![This is an image]()
 
 #### Deliverable 3 : Clustering Cryptocurrencies using K-Means
@@ -44,7 +45,20 @@ The data is not ideal, so it will need to be preprocessed to fit a machine learn
   - `model.fit(pcs_df)`
   - `predictions = model.predict(pcs_df)`
 - Now we can bring it all together. Combining our processed data with the principal components, bringing the Coin Names back into the mix. Then we can create or ['Class'] column fitting our numeric model label into it.
+  - `clustered_df = pd.concat([dropped_crypto_df, pcs_df], axis=1, join='inner')`
+  - `clustered_df["CoinName"] = crypto_name_df.CoinName`
+  - `clustered_df["Class"] = model.labels_`
 
-## Results
+![This is an image]()
+
+#### Deliverable 4 : Visualizing Cryptocurrencies Results
+
+![This is an image]()
+
+![This is an image]()
+
+![This is an image]()
 
 ## Summary
+
+- The 3D and 2D rendering of the Cryptocurrencies points out an outlier that likely drove us to the 4 class system for this machine learning model: BitTorrent. At 1 coin mined and 0.99 in supply it reaches far beyond the rest of the data and only member of class 2.
