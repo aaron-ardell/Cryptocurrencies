@@ -32,13 +32,13 @@ The data is not ideal, so it will need to be preprocessed to fit a machine learn
   - `crypto_pcs = pca.fit_transform(X)`  
   - `pcs_df = pd.DataFrame(data=crypto_pcs, columns=["PC 1", "PC 2", "PC 3"], index = dropped_crypto_df.index)`
 
-![This is an image]()
+![This is an image](https://github.com/aaron-ardell/Cryptocurrencies/blob/main/pics/pca.png)
 
 #### Deliverable 3 : Clustering Cryptocurrencies using K-Means
 
 -  To use K-means, the first thing we'll have to define is the value for 'k'. The best way to accomplish this is to use an Elbow Curve to determine the number of clusters to utilize. Where the line graph breaks towards a horizontal path will give us our best starting place. We'll use the `hvplot` library to visualize the graph.
 
-![This is an image]()
+![This is an image](https://github.com/aaron-ardell/Cryptocurrencies/blob/main/pics/elbowcurve.png)
 
 - That's great, it looks like 4 is a winner! Now we can go ahead and build our model.
   - `model = KMeans(n_clusters=4, random_state=0)`
@@ -49,15 +49,13 @@ The data is not ideal, so it will need to be preprocessed to fit a machine learn
   - `clustered_df["CoinName"] = crypto_name_df.CoinName`
   - `clustered_df["Class"] = model.labels_`
 
-![This is an image]()
+![This is an image](https://github.com/aaron-ardell/Cryptocurrencies/blob/main/pics/clustered_df.png)
 
 #### Deliverable 4 : Visualizing Cryptocurrencies Results
 
-![This is an image]()
+![This is an image](https://github.com/aaron-ardell/Cryptocurrencies/blob/main/pics/3dscatter)
 
-![This is an image]()
-
-![This is an image]()
+![This is an image](https://github.com/aaron-ardell/Cryptocurrencies/blob/main/pics/hvplot.scatter.png)
 
 ## Summary
 
